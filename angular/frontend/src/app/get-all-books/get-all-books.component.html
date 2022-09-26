@@ -1,0 +1,41 @@
+
+<div align="center">
+    <style type="text/css">
+        label{
+            width: 110px;
+            display: inline-block;
+            margin-left: 1%;
+        }
+    </style>
+    <h1> All Books </h1>
+    <table border="1" class="table table-bordered"  style="text-align: justify;">
+        <thead style="background-color: rgb(165,178, 161);">
+        <tr>
+            <th>Id</th>
+            <th>Logo</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>PublishedDate</th>
+            <th>Price</th>
+            <th>Content</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+        <tr *ngFor='let book of books'>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.id}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.logo}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.category}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.title}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.author}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.publisher}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.publishedDate}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.price}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.content}}</span></td>
+            <td style="background-color: rgb(105, 160, 135);"><span>{{book.active}}</span></td>
+        </tr>
+    </table>
+
+
+</div>

@@ -1,0 +1,84 @@
+<div align='center'>
+
+    <h1 style="background-color: rgb(115,128, 121);">Create Books</h1>
+
+    <table>
+        <tr>
+            <td>Title:</td>
+            <td><input [(ngModel)]="book.title" required #title="ngModel" name="title" class="text-center" />
+                <div class="alert-danger" *ngIf="title.errors  ">
+                    <div *ngIf="title.errors['required']">Title is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Logo:</td>
+            <td><input [(ngModel)]="book.logo" required #logo="ngModel" name="logo" class="text-center" />
+                <div class="alert-danger" *ngIf="logo.errors  ">
+                    <div *ngIf="logo.errors['required']">logo is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>category:</td>
+            <Td>
+                <select reuired #category="ngModel" name="category" [(ngModel)]="book.category">
+                    <option *ngFor="let category of categoryList" [ngValue]="category">{{category}}</option>
+                    <div class="alert-danger" *ngIf="category.errors  ">
+                        <div *ngIf="category.errors['required']">Category is required</div>
+                    </div>
+                </select>
+            </Td>
+        </tr>
+        <tr>
+            <td>Author:</td>
+            <td>
+                <input [(ngModel)]="book.author" required #author="ngModel" name="author" class="text-center" />
+                <div class="alert-danger" *ngIf="author.errors  ">
+                    <div *ngIf="author.errors['required']">Author is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Publisher:</td>
+            <td><input [(ngModel)]="book.publisher" required #publisher="ngModel" name="publisher"
+                    class="text-center" />
+                <div class="alert-danger" *ngIf="publisher.errors  ">
+                    <div *ngIf="publisher.errors['required']">Publisher is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Published Date:</td>
+            <td><input [(ngModel)]="book.publishedDate" required #publishedDate="ngModel" name="publishedDate"
+                    type="date" />
+                <div class="alert-danger" *ngIf="publishedDate.errors  ">
+                    <div *ngIf="publishedDate.errors['required']">PublishedDate is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input [(ngModel)]="book.price" required #price="ngModel" name="price" type="number"
+                    class="text-center" />
+                <div class="alert-danger" *ngIf="price.errors  ">
+                    <div *ngIf="price.errors['required']">Price is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>content:</td>
+            <td><input [(ngModel)]="book.content" required #content="ngModel" name="content" class="text-center" />
+                <div class="alert-danger" *ngIf="content.errors  ">
+                    <div *ngIf="content.errors['required']">Content is required</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Active:</td>
+            <td><input name='active' type="radio" [value]="true" [(ngModel)]="book.active" /> True</td>
+            <td><input name='active' type="radio" [value]="false" [(ngModel)]="book.active" />False</td>
+        </tr>
+    </table>
+    <button (click)='save()' class='btn btn-success'> Save</button>
+</div>

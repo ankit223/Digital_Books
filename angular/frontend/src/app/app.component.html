@@ -1,0 +1,32 @@
+<div >
+  <nav class="navbar navbar-expand-md navbar-light" style="background-color: rgb(95,191,171)">
+    <div style="display: inline"class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/'>Home</a>
+      </li>
+    </div>
+  <ul class="navbar-nav ms-auto" routerLinkActive="active">
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/searchbooks" style="background-color: rgb(195,101,11)" >SearchBooks</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/booklist" style="background-color: rgb(195,101,11)">CreateBooks</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/getallbooks" style="background-color: rgb(195,101,11)">AllBooks</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/register" style="background-color: rgb(195,101,11)">Sign Up</a>
+    </li>
+    <li class="nav-item" >
+      <a class="nav-link" routerLink="/login" style="background-color: rgb(195,101,11)">Sign In</a>
+    </li>
+    <li class="nav-item" >
+      <a href class="nav-link" style="background-color: rgb(195,101,11)" (click)="logout()">logout</a>
+    </li>
+  </ul>
+</nav>
+<div class="container">
+<router-outlet></router-outlet>
+</div>
+</div>

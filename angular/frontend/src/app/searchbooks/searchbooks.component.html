@@ -1,0 +1,83 @@
+<div>
+    <div align="center">
+        <h1 style="background-color: rgb(175,128, 141);">Search Books </h1>
+        <table>
+            <tr>
+                <td>Category:</td>
+                <Td>
+                    <select name="category" #category="ngModel" [(ngModel)]="book.category">
+                        <option *ngFor="let category of categoryList" [ngValue]="category">{{category}}</option>
+                        <div class="alert-danger" *ngIf="category.errors  ">
+                            <div *ngIf="category.errors['required']">Category is required</div>
+                        </div>
+                    </select>
+
+                </Td>
+            </tr>
+            <tr>
+                <td>Author:</td>
+                <td>
+                    <input [(ngModel)]="book.author" required #author="ngModel" class="text-center" />
+                    <div class="alert-danger" *ngIf="author.errors  ">
+                        <div *ngIf="author.errors['required']">Author is required</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Publisher:</td>
+                <td><input [(ngModel)]="book.publisher" required #publisher="ngModel" name="publisher"
+                        class="text-center" />
+                    <div class="alert-danger" *ngIf="publisher.errors  ">
+                        <div *ngIf="publisher.errors['required']">Publisher is required</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><input [(ngModel)]="book.price" required #price="ngModel" name="price" type="number"
+                        class="text-center" />
+                    <div class="alert-danger" *ngIf="price.errors  ">
+                        <div *ngIf="price.errors['required']">Price is required</div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div align="right"><button (click)='searchBooks()' class="btn btn-primary"> search</button></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div align="center">
+    <table border="1" class="table table-bordered" style="text-align: justify;">
+        <thead style="background-color: rgb(165,178, 161);">
+            <tr>
+                <th>Id</th>
+                <th>Logo</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Author</th>
+                <th>Publisher</th>
+                <th>PublishedDate</th>
+                <th>Content</th>
+                <th>Price</th>
+                <th>Active</th>
+            </tr>
+        </thead>
+        <tr *ngFor='let book of books'>
+            <td>{{book.id}}</td>
+            <td>{{book.logo}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.category}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.publishedDate}}</td>
+            <td>{{book.content}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.active}}</td>
+        </tr>
+    </table>
+
+</div>
